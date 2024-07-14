@@ -17,11 +17,11 @@ export interface IEvent extends Document {
 }
 
 const EventSchema = new Schema({
-  title: { title: String, required: true },
+  title: { title: String },
   description: { type: String },
   location: { type: String },
   createdAt: { type: Date, default: Date.now },
-  imageUrl: { type: String, required: true },
+  imageUrl: { type: String },
   startDateTime: { type: Date, default: Date.now },
   endDateTime: { type: Date, default: Date.now },
   price: { type: String },
