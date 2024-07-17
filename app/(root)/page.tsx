@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Collection from "@/components/shared/Collection";
 import Search from "@/components/shared/Search";
+import CategoryFilter from "@/components/shared/CategoryFilter";
 
 import { getAllEvents } from "@/lib/actions/events.actions";
 
@@ -59,20 +60,18 @@ export default async function Home({ searchParams }: SearchParamProps) {
 
         <div className="flex w-full flex-col gap-5 md:flex-row">
           <Search />
-          CategoryFilter
+          <CategoryFilter />
         </div>
 
-        {events && (
-          <Collection
-            data={events?.data}
-            emptyTitle="No Events Found"
-            emptyStateSubtext="Come back later"
-            collectionType="All_Events"
-            limit={6}
-            page={1}
-            totalPages={2}
-          />
-        )}
+        <Collection
+          data={events?.data}
+          emptyTitle="No Events Found"
+          emptyStateSubtext="Come back later"
+          collectionType="All_Events"
+          limit={6}
+          page={1}
+          totalPages={2}
+        />
       </section>
     </>
   );
